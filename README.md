@@ -105,9 +105,9 @@ macOS / Linux:
 
 補足:
 
-- `Dockerfile` 内で `chmod +x ./mvnw` を実行し、Linux環境の権限エラーを回避
 - `server.port` は Render 想定で `10000` 固定
 - `spring.sql.init.mode=always` により起動時に `schema.sql` を適用
+- Docker ビルドは Maven 公式イメージを使い、`mvnw` / `.mvn` に依存しません
 
 ## ディレクトリ構成（主要）
 

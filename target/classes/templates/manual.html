@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使い方 | 買物・管理リスト</title>
+    <style>
+        :root {
+            --bg: #eef4ff;
+            --card: #ffffff;
+            --line: #c8d9ee;
+            --text: #163455;
+            --accent: #2d6cdf;
+        }
+
+        body {
+            margin: 0;
+            background: radial-gradient(circle at 12% 8%, #dff4ff, transparent 35%), var(--bg);
+            color: var(--text);
+            font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+        }
+
+        main {
+            max-width: 860px;
+            margin: 20px auto;
+            padding: 0 14px 20px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 8px 18px rgba(30, 70, 130, 0.1);
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: 24px;
+        }
+
+        h2 {
+            margin: 18px 0 8px;
+            font-size: 18px;
+        }
+
+        p,
+        li {
+            line-height: 1.7;
+        }
+
+        ul,
+        ol {
+            margin: 8px 0 0 20px;
+            padding: 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 14px;
+            text-decoration: none;
+            color: #fff;
+            background: var(--accent);
+            padding: 9px 14px;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="card">
+            <h1>使い方マニュアル</h1>
+            <p>このアプリは「買い物メモ」と「冷蔵庫在庫」をまとめて管理するためのツールです。</p>
+
+            <h2>基本操作（5ステップ）</h2>
+            <ol>
+                <li>上部の「予算」に月の予算を入力します。</li>
+                <li>「メモ帳」を開き、買いたいものを1行ずつ入力して「決定」を押します。</li>
+                <li>買い物リストの項目をクリックして、金額と賞味期限を入力します。</li>
+                <li>確認すると項目が「冷蔵庫」へ移動し、出費・残金が更新されます。</li>
+                <li>必要に応じて下部の「保存」ボタンでデータベースへ保存します。</li>
+                <li>不要な商品は、ドラッグ＆ドロップ、またはスマホでタッチしてフリックすることで、ただちに削除できます。復元はできません。</li>
+            </ol>
+
+            <h2>補足</h2>
+            <ul>
+                <li>冷蔵庫に同名の商品がある場合は、追加確認メッセージが表示されます。</li>
+                <li>ヘッダーの「◎」ボタンでテーマを順番に切り替えできます。</li>
+                <li>冷蔵庫リストは件数が増えるとスクロール表示になります。</li>
+                <li>買い物した商品に賞味期限をつけることが出来るので、冷蔵庫の古い品物がひとめでわかります。</li>
+            </ul>
+
+            <a class="back-link" href="/">メイン画面へ戻る</a>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>買物・管理リスト</title>
+    <link rel="stylesheet" href="style.css?v=20260521b">
+</head>
+
+
+<body>
+    <header>
+        <div class="budget-row">
+            <div class="budget-block">
+                <label for="monthlyBudget">予算</label>
+                <input id="monthlyBudget" type="text" inputmode="numeric" placeholder="予算を入力" value="30,000">
+                <span></span>
+            </div>
+            <div class="budget-block">出費: ¥<span id="plannedExpense">0</span></div>
+            <div class="budget-block">残金: ¥<span id="remainingBudget">30000</span></div>
+            <div class="budget-block budget-clock-block">
+                <div class="clock" aria-label="アナログ時計">
+                    <div class="hand hour" id="hourHand"></div>
+                    <div class="hand minute" id="minuteHand"></div>
+                    <div class="hand second" id="secondHand"></div>
+                    <div class="clock-center"></div>
+                </div>
+            </div>
+        </div>
+        <div class="datetime-wrap">
+            <div class="header-tools">
+                <button id="themeToggleBtn" type="button" aria-label="デザイン切替">◎</button>
+                <a id="manualLinkBtn" href="/manual" aria-label="使い方を開く">使い方</a>
+            </div>
+            <div class="datetime-right">
+                <div id="calendarDate" aria-label="カレンダー">0000-00-00</div>
+                <div id="digitalClock" aria-label="デジタル時計">00:00:00</div>
+            </div>
+        </div>
+    </header>
+    <div id="pigeonStage" aria-hidden="true"></div>
+    <div id="fortuneResult" aria-live="polite"></div>
+    <div id="redFlash" aria-hidden="true"></div>
+    <main>
+        <section>
+            <div class="list-columns">
+                <div class="list-column">
+                    <h2>メモ帳</h2>
+                    <div id="memoVisual" class="memo-visual" role="button" tabindex="0" aria-label="メモ帳を開く">
+                        <div class="memo-pad">
+                            <div class="memo-spiral"></div>
+                            <div class="memo-page"></div>
+                            <div class="memo-line line-1"></div>
+                            <div class="memo-line line-2"></div>
+                            <div class="memo-line line-3"></div>
+                        </div>
+                        <div class="memo-caption">クリックでメモ帳を開く</div>
+                    </div>
+                    <div id="shoppingPanel" class="list-box shopping-panel" hidden>
+                        <div class="list-header">
+                            <h2>買い物リスト</h2>
+                            <button id="bulkAddBtn" type="button">決定</button>
+                        </div>
+                        <div class="bulk-input-wrap">
+                            <textarea id="bulkShoppingInput" rows="6" placeholder="買いたいものを1行ずつ入力"></textarea>
+                        </div>
+                        <ul id="shoppingList" class="item-list"></ul>
+                    </div>
+                </div>
+                <div class="list-column">
+                    <h2>冷蔵庫</h2>
+                    <div id="fridgeVisual" class="fridge-visual" role="button" tabindex="0" aria-label="冷蔵庫を開く">
+                        <div class="fridge-body">
+                            <div class="fridge-door top"></div>
+                            <div class="fridge-door bottom"></div>
+                            <div class="fridge-handle top"></div>
+                            <div class="fridge-handle bottom"></div>
+                        </div>
+                        <div class="fridge-caption">クリックで冷蔵庫を開く</div>
+                    </div>
+                    <div class="list-box fridge-list-box" id="stockBox" hidden>
+                        <table class="stock-table">
+                            <thead>
+                                <tr>
+                                    <th>商品名</th>
+                                    <th>金額</th>
+                                    <th>購入日</th>
+                                    <th>賞味期限</th>
+                                </tr>
+                            </thead>
+                            <tbody id="stockList"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div id="trash">ここにドラッグして削除</div>
+        <button id="saveBtn" type="button">保存</button>
+    </footer>
+    <div id="itemModal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <h3 id="modalTitle">冷蔵庫へ追加</h3>
+            <div class="modal-field">
+                <label for="modalAmount">金額</label>
+                <input id="modalAmount" type="text" inputmode="numeric" placeholder="金額を入力">
+            </div>
+            <div class="modal-field">
+                <label for="modalExpiry">賞味期限</label>
+                <input id="modalExpiry" type="date">
+            </div>
+            <div class="modal-actions">
+                <button id="modalCancelBtn" type="button">キャンセル</button>
+                <button id="modalConfirmBtn" type="button">確認</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js?v=20260521a"></script>
+</body>
+
+</html>
